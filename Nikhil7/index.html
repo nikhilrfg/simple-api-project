@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <h2>Fetch API Data</h2>
+    <form onsubmit="fetchDataByLatLon(); return false;">
+      <h1>Weather API</h1>
+      <label for="lat">Latitude</label>
+      <input type="text" id="lat" placeholder="Enter Latitude" >
+      <br>
+      <label for="lon">Longitude</label>
+      <input type="text" id="lon" placeholder="Enter Longitude" >
+      <br>
+      <label for="apiKey">API Key</label>
+      <input type="password" id="apiKey" placeholder="Enter API Key" required>
+      <br>
+      <label for="time">Time</label>
+      <input type="number" id="time" placeholder="Enter Unix Time" >
+      <br>
+      <label for="city">City</label>
+      <input type="text" id="city" placeholder="Enter City">
+      <br>
+      <button type="button" onclick="setPreset()">Use Preset</button>
+      <button type="submit">Fetch Data</button>
+      <button onclick="fetchDataByCity()">Get Weather by city</button><br><br>
+      <!-- Add buttons for Promise.all() and Promise.any() -->
+      <button onclick="fetchDataFromAll()">Fetch Data from All (Promise.all())</button>
+      <button onclick="fetchDataFromAny()">Fetch Data from Any (Promise.any())</button>
+      <!-- Add button for fetching data with web worker -->
+      <button onclick="fetchDataWithWorker()">Fetch Data with Web Worker</button>
+    </form>
+    <br>
+    <div id="dataContainer"></div>
+    <script type="text/javascript" src="private-config.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
